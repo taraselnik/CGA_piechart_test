@@ -1,4 +1,5 @@
 const url = "https://demo.flexmms.com/v3/api/incidents/";
+// const url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
 const params = {
   view: "detailed",
@@ -7,7 +8,7 @@ const params = {
 };
 const options = {
   method: "POST",
-  // mode: "no-cors",
+  mode: "no-cors",
   headers: {
     "api-key": "SzVlZGUwYzdjMTg1Y2M4LjM2NTM5MzYw",
     "Content-Type": "application/json",
@@ -17,7 +18,8 @@ const options = {
 
 export const fetchData = () => {
   return fetch(url, options)
-    .then((response) => response.json())
+    .then((response) => response)
+    .then((data) => console.log(data))
     // .then((data) => {
     //   console.log(
     //     "OUT ==>>> ",
