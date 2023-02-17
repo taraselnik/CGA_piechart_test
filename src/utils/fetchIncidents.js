@@ -1,4 +1,4 @@
-const url = "/incidents/";
+const url = "https://demo.flexmms.com/v3/api/incidents/";
 // const url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population";
 
 const params = {
