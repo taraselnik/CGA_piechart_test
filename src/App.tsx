@@ -10,7 +10,8 @@ function App() {
 const [dataIn, setDataIn] = useState<Incident[]>([]);
 useEffect(() => {
  fetchData()
-  .then(data => setDataIn(data.results))
+  .then(data => data.json())
+  .then(inc => setDataIn(inc.results))
 }, [])
 
   const incedentTypes = (input: Incident[]) => {

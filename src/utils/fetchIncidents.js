@@ -18,7 +18,7 @@ const options = {
 
 export const fetchData = () => {
   return fetch(url, options)
-    .then((response) => response.json())
+    .then((response) => response)
     // .then((data) => console.log(data.results))
     // .then((data) => {
     //   console.log(
