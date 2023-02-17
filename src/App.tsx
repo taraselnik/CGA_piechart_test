@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { dataIn } from "./utils/data";
+// import { dataIn } from "./utils/data";
 import { Incident } from "./types/Incident";
 import { Chart } from "react-google-charts";
 import { fetchData } from "./utils/fetchIncidents";
 
 function App() {
 
-  fetchData();
-  // here some issues with fetching
+const [dataIn, setDataIn] = useState<Incident[]>([]);
+useEffect(() => {
+ fetchData()
+  .then(data => setDataIn(data.results))
+}, [])
 
   const incedentTypes = (input: Incident[]) => {
     const allTypes: string[] = [];
